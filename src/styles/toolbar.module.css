@@ -1,0 +1,167 @@
+.toolbar {
+  height: 44px;
+  width: 100%;
+  background: #080808;
+  border-bottom: 1px solid #161616;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.center {
+  flex: 1;
+  justify-content: center;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+/* ───────── mode tabs ───────── */
+.modeTabs {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  height: 44px;
+}
+
+.modeTab {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: #555;
+  letter-spacing: 0.08em;
+  padding: 0 2px;
+  border-bottom: 2px solid transparent;
+  height: 44px;
+  line-height: 44px;
+}
+
+.modeTabActiveDraw {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.modeTabActiveMagic {
+  color: #e040fb;
+  border-bottom-color: #e040fb;
+}
+
+/* ───────── gesture badge ───────── */
+.badge {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+/* ───────── range / brush ───────── */
+.brushControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.range {
+  width: 120px;
+  height: 14px;
+  background: transparent;
+}
+.range::-webkit-slider-runnable-track {
+  height: 3px;
+  background: #222;
+}
+.range::-moz-range-track {
+  height: 3px;
+  background: #222;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+  margin-top: -6px;
+}
+.range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: none;
+}
+
+.weight {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: #888;
+  min-width: 24px;
+  text-align: right;
+}
+
+/* ───────── swatches ───────── */
+.swatches {
+  display: flex;
+  gap: 12px;
+}
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.swatchActive {
+  box-shadow: 0 0 0 2px #080808, 0 0 0 3.5px #ffffff;
+}
+
+/* ───────── shape buttons (magic) ───────── */
+.shapeButtons {
+  display: flex;
+  gap: 6px;
+}
+
+.shapeBtn {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: #777;
+  padding: 4px 8px;
+  border: 1px solid #1c1c1c;
+  background: transparent;
+}
+
+.shapeBtnActive {
+  color: #fff;
+  border-color: #2a2a2a;
+  background: #111;
+}
+
+/* ───────── icon buttons ───────── */
+.iconRow {
+  display: flex;
+  gap: 4px;
+  margin-left: 16px;
+}
+
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.iconBtn:hover {
+  border-color: #2a2a2a;
+}

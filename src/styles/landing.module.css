@@ -1,0 +1,239 @@
+.page {
+  background: #050505;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ───── nav ───── */
+.nav {
+  height: 52px;
+  border-bottom: 1px solid #141414;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.wordmark {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navLink {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: #888;
+}
+
+.navLink:hover {
+  color: #fff;
+}
+
+/* ───── hero ───── */
+.hero {
+  height: calc(100vh - 52px);
+  min-height: 540px;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 400ms ease, transform 400ms ease;
+}
+
+.heroIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heroHalf {
+  padding: 8vh 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.heroDivider {
+  background: #141414;
+  width: 1px;
+  height: 100%;
+}
+
+.heroTitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 900;
+  font-size: clamp(56px, 8vw, 160px);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+@keyframes hueShift {
+  0% { color: #e040fb; }
+  50% { color: #ff80ab; }
+  100% { color: #e040fb; }
+}
+
+.heroTitleMagic {
+  animation: hueShift 3s ease infinite;
+}
+
+.heroSub {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.ctaWhite, .ctaMagic {
+  align-self: flex-start;
+  padding: 14px 22px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #000;
+  font-weight: 700;
+}
+
+.ctaWhite {
+  background: #ffffff;
+}
+.ctaWhite:hover { background: #e6e6e6; }
+
+.ctaMagic {
+  background: #e040fb;
+}
+.ctaMagic:hover { background: #c020d8; }
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1px 1fr;
+    height: auto;
+  }
+  .heroDivider { width: 100%; height: 1px; }
+}
+
+/* ───── previews ───── */
+.previews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid #141414;
+  border-bottom: 1px solid #141414;
+}
+
+.previewCard {
+  position: relative;
+  border-right: 1px solid #1c1c1c;
+  padding: 32px;
+  background: #050505;
+}
+
+.previewCard:last-child {
+  border-right: none;
+}
+
+.previewLabel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #666;
+  z-index: 2;
+}
+
+.previewCanvas, .previewSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #141414;
+}
+
+@media (max-width: 800px) {
+  .previews {
+    grid-template-columns: 1fr;
+  }
+  .previewCard {
+    border-right: none;
+    border-bottom: 1px solid #1c1c1c;
+  }
+  .previewCard:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ───── features ───── */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 80px 6vw;
+  gap: 4vw;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.featureNum {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 72px;
+  color: #131313;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.featureLabel {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.featureDesc {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .features { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ───── footer ───── */
+.footer {
+  border-top: 1px solid #141414;
+  height: 52px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 0 24px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+}
+
+.footerSide {
+  color: #444;
+}
+
+.footerCenter {
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.footerRight {
+  text-align: right;
+}
