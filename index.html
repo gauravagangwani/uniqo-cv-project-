@@ -280,10 +280,10 @@
 
     /* ── canvas app ── */
     .appShell { display: flex; flex-direction: column; min-height: 100vh; }
-    .canvasShell { flex: 1; display: flex; align-items: center; justify-content: center; padding: 28px; }
+    .canvasShell { flex: 1; display: flex; align-items: center; justify-content: center; padding: 10px; }
     .canvasFrame {
       position: relative; width: 100%;
-      max-width: min(100%, calc((100vh - 132px) * 4 / 3));
+      max-width: min(100%, calc((100vh - 80px) * 4 / 3));
       aspect-ratio: 4/3; background: #1d1e22; border: 1px solid var(--line); overflow: hidden;
       box-shadow: inset 0 0 120px rgba(0,0,0,0.55), 0 30px 80px -30px rgba(0,0,0,0.6);
     }
@@ -366,6 +366,11 @@
     const TIPS = [4, 8, 12, 16, 20];
 
     /* ── gesture classifier ── */
+    function isHandClosed(lm) {
+      if (!lm || lm.length < 21) return false;
+      return lm[8].y > lm[6].y && lm[12].y > lm[10].y && lm[16].y > lm[14].y && lm[20].y > lm[18].y;
+    }
+
     function classifyGesture(lm) {
       if (!lm || lm.length < 21) return "idle";
       const d = Math.hypot(lm[4].x - lm[8].x, lm[4].y - lm[8].y);
@@ -1113,6 +1118,7 @@
 
               for (let h = 0; h < hands.length; h++) {
                 const lm = hands[h];
+                if (isHandClosed(lm)) continue;
                 for (let i = 0; i < lm.length; i++) {
                   const x = (1-lm[i].x)*WCV, y = lm[i].y*HCV;
                   const isTip = TIPS.includes(i);
